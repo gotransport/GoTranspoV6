@@ -42,6 +42,7 @@ app.use(function(req, res, next){
 	next();
 });
 
+// For SignUp.
 app.post("/signup",function(req,res){
 //   var newUser = new User({username: req.body.username});
 	// var date = req.body.dob.toDateString();
@@ -75,6 +76,7 @@ app.post("/signup",function(req,res){
 	// })
 });
 
+// For login
 app.post("/login", passport.authenticate("local", 
 	{
 		successRedirect: "/home",
@@ -82,6 +84,7 @@ app.post("/login", passport.authenticate("local",
     }), function(req, res){ 
 });
 
+// For logout
 app.get("/logout", function(req, res){
     req.logout();
     res.redirect("/home");
